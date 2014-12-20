@@ -1,0 +1,105 @@
+/*
+This script will have the drone do ball tracking only if tracking is 1
+tracking gets 0 when the ball is put below y = -0.3
+tracking gets 1 when the ball is put above y = 0.3
+*/
+
+
+var Global.drone = ARDrone.new;
+drone.load = 1;
+while(!drone.stateConnected)
+{
+        echo("Waiting connection.");
+        sleep(1);
+};
+
+echo ("Successfuly connected");
+
+var Global.ball = colormap.new("drone.cameraVal", 200, 255, 0, 120, 0, 255, 0.0015, true);
+var tracking = 1;
+var recording = 0;
+var first = 0;
+var second = 0;
+//var third = 0;
+//var fourth = 0;
+	
+myTag:every(0.1s)
+{
+	if (ball.visible)
+        {
+		if (tracking == 1)
+		{
+			drone.speedYaw = -(ball.x * 2);
+			if (ball.y <= -0.3) //ball to bottom to stop tracking
+			{		
+				tracking = 0;
+			}
+		}
+		else
+		{
+			if((recording == 0)&&(ball.x < 0.1) && (ball.x > -0.1) && (ball.y < 0.1) && (ball.y > -0.1))//ball to midddle to start recording
+			{
+				recording = 1;
+				drone.speedYaw = 0.5;
+				drone.sleep(0.1s);
+				drone.speedYaw = -0.5;
+				drone.sleep(0.1s);
+				drone.speedYaw = 0;
+				
+			}
+			else
+			{
+				if ((recording == 1) && (ball.y > 0.3) && (ball.x < 0.2) && (ball.x > -0.2)) //top middle part = 1
+				{
+					if (first == 0)
+					first = 1;
+					if ((first != 0) && (first != 1) && (second != 1))
+					second = 1;	
+				}
+			if ((recording == 1) && (ball.y < 0.3) && (ball.x < 0.2) && (ball.x > -0.2))//bottom middle part = 2
+			{
+				if(first == 0)
+				first = 2;
+				if ((first != 0) && (first != 2) && (second != 2)
+				second = 2;
+			}
+			if ((first != 0) && (second != 0))//if all recording spots have a value
+			{
+				if(first == 1)//top down motion
+				{
+					drone.speedYaw = 1;
+					drone.sleep(2s);
+					drone.speedYaw = 0;
+					first = 0;
+					second = 0;
+					recording = 0;
+					tracking = 1;
+				}
+				else //bottom up motion
+				{
+					drone.speedYaw = -1;
+					drone.sleep(2s);
+					drone.speedYaw = 0;
+					first = 0;
+					second = 0;
+					recording = 0;
+					tracking = 1;
+				}
+			}
+			else
+			{
+				drone.speedYaw = 0;
+				if (ball.y >= 0.3)
+				{
+				tracking = 1;
+				} 
+			}
+	
+		}
+	}
+	else
+        {
+                drone.speedYaw = 0;
+        }
+	
+},

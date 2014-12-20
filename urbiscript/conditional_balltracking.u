@@ -1,0 +1,47 @@
+/*
+This script will have the drone do ball tracking only if tracking is 1
+tracking gets 0 when the ball is put below y = -0.3
+tracking gets 1 when the ball is put above y = 0.3
+*/
+
+
+var Global.drone = ARDrone.new;
+drone.load = 1;
+while(!drone.stateConnected)
+{
+        echo("Waiting connection.");
+        sleep(1);
+};
+
+echo ("Successfuly connected");
+
+var Global.ball = colormap.new("drone.cameraVal", 200, 255, 0, 120, 0, 255, 0.0015, true);
+var tracking = 1;
+	
+myTag:every(0.1s)
+{
+	if (ball.visible)
+        {
+		if (tracking == 1)
+		{
+			drone.speedYaw = -(ball.x * 2);
+			if (ball.y <= -0.3)
+			{		
+				tracking = 0;
+			}
+		}
+		else
+		{
+			drone.speedYaw = 0;
+			if (ball.y >= 0.3)
+			{
+				tracking = 1;
+			} 
+		}
+	}
+	else
+        {
+                drone.speedYaw = 0;
+        }
+	
+},

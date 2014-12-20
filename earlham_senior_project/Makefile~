@@ -1,0 +1,11 @@
+all: main
+
+main:
+	latex survey_paper
+	bibtex survey_paper
+	latex survey_paper
+	latex survey_paper
+	dvipdf survey_paper.dvi 
+
+clean:
+	rm -f *.aux *.bak *.dvi *.log *.toc *.pdf *.blg *.bbl

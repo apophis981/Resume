@@ -1,0 +1,63 @@
+\begin{thebibliography}{10}
+
+\bibitem{3}
+{\sc Fischler, M., and Elschlager, R.}
+\newblock The representation and matching of pictorial structures.
+\newblock {\em Computers, IEEE Transactions on C-22}, 1 (jan. 1973), 67 -- 92.
+
+\bibitem{2}
+{\sc Freeman, W.~T., Freeman, W.~T., Roth, M., and Roth, M.}
+\newblock Orientation histograms for hand gesture recognition.
+\newblock In {\em In International Workshop on Automatic Face and Gesture
+  Recognition\/} (1994), pp.~296--301.
+
+\bibitem{3d}
+{\sc Imai, A., Shimada, N., and Shirai, Y.}
+\newblock 3-d hand posture recognition by training contour variation.
+\newblock In {\em Proc. of 6th Int. Conf. on Automatic Face and Gesture
+  Recognition\/} (2004), pp.~895 -- 900.
+
+\bibitem{4}
+{\sc Lades, M., Vorbruggen, J., Buhmann, J., Lange, J., von~der Malsburg, C.,
+  Wurtz, R., and Konen, W.}
+\newblock Distortion invariant object recognition in the dynamic link
+  architecture.
+\newblock {\em Computers, IEEE Transactions on 42}, 3 (mar 1993), 300 --311.
+
+\bibitem{opencv}
+{\sc Manresa, C., Varona, J., Mas, R., and Perales, F.}
+\newblock Hand tracking and gesture recognition for human-computer interaction.
+\newblock {\em ELCVIA 5}, 3 (2005).
+
+\bibitem{sixthsense}
+{\sc Mistry, P., and Maes, P.}
+\newblock Sixthsense: a wearable gestural interface.
+\newblock In {\em ACM SIGGRAPH ASIA 2009 Sketches\/} (New York, NY, USA, 2009),
+  SIGGRAPH ASIA '09, ACM, pp.~11:1--11:1.
+
+\bibitem{fingertip}
+{\sc Oka, K., Sato, Y., and Koike, H.}
+\newblock Real-time fingertip tracking and gesture recognition.
+\newblock {\em Computer Graphics and Applications, IEEE 22}, 6 (nov/dec 2002),
+  64 -- 71.
+
+\bibitem{1}
+{\sc Triesch, J., and von~der Malsburg, C.}
+\newblock Robust classification of hand postures against complex backgrounds.
+\newblock In {\em Automatic Face and Gesture Recognition, 1996., Proceedings of
+  the Second International Conference on\/} (oct 1996), pp.~170 --175.
+
+\bibitem{egm}
+{\sc Triesch, J., and von~der Malsburg, C.}
+\newblock A system for person-independent hand posture recognition against
+  complex backgrounds.
+\newblock {\em Pattern Analysis and Machine Intelligence, IEEE Transactions on
+  23}, 12 (dec 2001), 1449 --1453.
+
+\bibitem{dla}
+{\sc Wu, Y., and Huang, T.}
+\newblock View-independent recognition of hand postures.
+\newblock In {\em Computer Vision and Pattern Recognition, 2000. Proceedings.
+  IEEE Conference on\/} (2000), vol.~2, pp.~88 --94 vol.2.
+
+\end{thebibliography}

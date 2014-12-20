@@ -1,0 +1,68 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[utf8x]{inputenc}
+
+% Title Page
+\title{A Survey of the Different Methods of Hand Gesture Recognition for Human-Computer Interaction}
+\author{Jeremy Hurst}
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+
+A hand gesture interface could provide an attractive alternative to current human computer interfaces which are cumbersome. Hand gestures are easy to learn and memorize, can be performed with speed and ease, and are complex enough to  allow a large vocabulary of gestures which are distinguishable due to their diversity.  Currently we use mouse and keyboard almost exclusively to issue commands to our computers. Keyboards and mice may be sufficient control interfaces for many tasks, but for some they are suboptimal. Most popular computer applications used today have countless different functions which are accessed by traversing the mouse pointer through a maze of drop down menus, these functions could be much more easily accessed by using a hand gesture interface. Robotic control would also be improved by a hand gesture interface where any sort of control hardware would become inconvenient to use.   In this report, a number of techniques for hand gesture recognition are evaluated and discussed. The goal of this paper is to give an overview of the challenges that are involved in making a human computer interface which can interpret hand signals, and what techniques were used to overcome those challenges in order to provide those interested with the tools to be able to make an effective interface for hand gesture recognition. 
+
+\end{abstract}
+\tableofcontents
+\maketitle
+\section{Introduction}
+
+Gestures are a very powerful means of communication, so powerful in fact that our entire language can be translated into hand gestures and used as an efficient way of communication for disabled persons (Sign Language). Consequently a significant amount of research has gone into making human-computer interfaces which can recognize hand signals \cite{1} \cite{2}. Many appearances of hand gesture recognizing human-computer interfaces in science fiction have demonstrated the excitement people have for and the possibilities of such an interface. 
+
+The mechanical devices we use today for interaction with our computers are good for some tasks, but cumbersome for others. Three dimensional computer automated design, for instance, could greatly be improved because the devices we use today such as mice and most joysticks can give accurate input in two dimensions, but they are manipulating virtual objects in three dimensions. All of the implementations of three dimensional manipulation with a two dimensional input are non intuitive and awkward. Effectively the user is trying to manipulate a three dimensional object while being constrained to move in two dimensions. If three dimensional gesture recognition were applied to 3D CAD, computer design software could be as intuitive to use as molding clay. 
+
+This paper will evaluate a number of techniques that have been used to create human gesture interfaces for computers using the hardware and software which we have today. 
+
+\section{Challenges Involved}
+
+A number of requirements for an effective hand gesture recognition interface make the problem particularly challenging \cite{egm}. A good hand gesture recognition interface must 1) be person-independent. The interface should recognize the same hand gestures from hands of different color and size. The interface must 2) be able to distinguish the hand from the background of the picture, no matter how complex. All of these are problems which can require computational algorithms which are complex and computationally expensive. 
+
+\section{Gesture Recognition Using a Full Color Webcam with 240 X 380 pixel resolution and OpenCV libraries}
+
+This approach takes advantage of the open source library for image processing called OpenCV \cite{opencv}. This process builds on top of the Open CV library to make hand segmentation and gesture recognition less difficult and makes their code much less cumbersome. In this approach, hand gesture recognition is taken in three steps: hand segmentation based on characteristic color values of the human skin, hand tracking, and gesture recognition. The hand segmentation in this case is computationally simple because all that needs to be done is to subtract everything from the image which is not the color of the skin on the human hand. Gesture recognition is done by extracting several hand features that are fed into a finite state classifier which identifies the hand configuration.  In order to make gesture recognition for this approach more accurate, tracking needs to be implemented. Tracking is performed by assuming that the hand retains constant velocity and using a pixel labeling approach which keeps track of individual features of the had as it moves from frame to frame. 
+
+This method boasted a 98 percent correct interpretation rate among 40 different people doing 40 distinct hand gestures in different lighting conditions and backgrounds. It was then applied to being used as a controller for a 3D video game and was effectively used for movement commands for the game.
+
+\section{Finger Tip Tracking using Color Markers}
+
+A popular method for hand signal recognition using a color sensitive webcam is to have the user wear markers on the tips of their fingers which all have a unique color \cite{sixthsense}. The markers can be easily identified in the program by searching for a group of adjacent pixels which have the distinct color of one of the markers. Once the fingertips are identified, their position is stored as individual points. All that is required to do gesture recognition is to an analysis based on the positioning of those points in relation to the other points. This process makes both segmentation from the background and interpretation of the hand gesture computationally simple and is an attractive method for people who want to do person independent hand gesture recognition with inexpensive hardware. The producer of this device called SixthSense claims that he will release all of his software open source, a search for the code has yielded no results.
+
+\section{Finger Tip Tracking without Color Markers}
+
+A group of researchers from University of Tokyo\cite{fingertip} have come up with a novel idea for gesture recognition for use in a computer interface. The process they use has two main steps. First they extract the hand from the rest of the picture, then they run an algorithm which scans through the image of the extracted hand to find the features of the hand which can be identified as fingertips. 
+
+They recognized that it is a very complex problem to extract the hand from a non uniform background. In order to solve this problem, they used an infrared camera which was calibrated to be sensitive to the wavelength which our body heat naturally emits (between 30 and 34 degrees Celsius)  The resuling picture was one which had a uniform background shade and a uniformly intense shape of the hand. Extraction of the hand from the background in this case is computationally simple because all that is required is a threshold value be chosen and all of the pixels in the image that are darker than that value get set to black and all of the pixels which are brighter get set to white.  
+
+In order to find the tips of the fingers on the newly extracted image, they first define searching windows whose size is proportional to the width of the wrist in the image, then they have the computer iterate through the image with that scanning window. The scanning window is large enough so that it can fit enough of a fingertip inside to properly identify it as a fingertip, but not big enough to contain two different fingertips. As the scanning window scans through the image, when a fingertip is identified, it's position is saved and after the scan is complete, all of the positions of all of the fingertips that were identified are saved in memory. At this point the hand gesture can be interpreted by doing a geometric analysis (similar to the one in the previous section) on the fingertip positions. This method would not be useful in cases where the background of the infrared image was not cooler than body temperature. It would not work well, for instance, if a user had other parts of their body in the picture. For the purpose of a top-down view of the desktop environment, however, it works just fine.
+
+\section{Elastic Graph Matching}
+
+Elastic Graph Matching (EGM) \cite{egm} is an image recognition architecture which was inspired by a neural information processing concept called the Dynamic Link Architecture\cite{dla}. EGM has the advantage over other techniques for hand gesture recognition in that it does not require a previously segmented input image. In EGM, images are represented as two dimensional labeled graphs, the nodes of the graphs are labeled with a local image description, and the edges of the graph are labeled with a distance vector. Elastic matching on the produced data involves searching for node positions such that the local image description attached to each node matches the image region around the node and that the graph is not distorted too much\cite{egm}. The result of past implementations of this process have taken 58 seconds per image on a workstation which was running a single core 200mhz processor which had 340MB RAM and it was able to recognize 28 different hand gestures in front of complex backgrounds with a 93.1 success rate.
+
+\section{3D Hand Posture Estimation using Training Contour Variation}
+
+This technique uses a computer model of a three dimensional hand and matches the two dimensional profile of the user's hand to the three dimensional model \cite{3d}. The first part of this technique involves extracting a profile of the hand from the two dimensional image such that the only thing left after the extraction is a black background with a white outline of the hand. The variations of possible shape appearances of the hand outline are trained to images generated by the computer based on perspectives of the 3D model of the hand. The possible variations are then represented as the "Locally-Compressed Feature Manifold (LCFM) in appearance feature space." \cite{3} \cite{4} The posture tracking is done by tracking posture of the virtual hand created by the computer and represented in the LCFM. 
+
+This process is a good way to determine exactly what position the hand is in. Implementation of this method have resulted in correctly interpreting the hand posture 99.1% of the time, but it is also extremely expensive in computational terms. If someone wanted to use this as a human computer interface, they would have to add to this a library of hand gestures and a feature which would compare the posture of the hand to determine if the current hand position is a gesture. 
+
+\section{Conclusion}
+
+This paper has presented a variety of different ways to approach the problem of hand gesture interpretation for a human computer interface. The different techniques that were discussed include using OpenCV libraries and a finite state classifier, gesture recognition by fingertip tracking with and without color markers on the fingers, elastic graph matching, and 3D approximation of two dimensional hand profiles. Nearly all of these solutions involve two parts: hand segmentation and gesture interpretation.  Some forms of hand segmentation may be better for certain situations and not so good for others. In the same way some forms of gesture interpretation may be better for some situations than others. When working on this problem, the right combination of hand segmentation and gesture interpretation should be used.   
+
+
+
+
+\bibliographystyle{acm}
+\bibliography{refer}
+\end{document}

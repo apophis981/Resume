@@ -1,0 +1,104 @@
+@inproceedings{sixthsense, author = {Mistry, Pranav and Maes, Pattie}, title = {SixthSense: a wearable gestural interface}, booktitle = {ACM SIGGRAPH ASIA 2009 Sketches}, series = {SIGGRAPH ASIA '09}, year = {2009}, location = {Yokohama, Japan}, pages = {11:1--11:1}, articleno = {11}, numpages = {1}, url = {http://doi.acm.org/10.1145/1667146.1667160}, doi = {http://doi.acm.org/10.1145/1667146.1667160}, acmid = {1667160}, publisher = {ACM}, address = {New York, NY, USA}, keywords = {augmented reality, gestural interaction, multi-touch interaction, object augmentation, wearable computing}, }
+
+@article{opencv, author = {Manresa, C. and Varona, J. and Mas, R. and Perales, F.}, title = {Hand Tracking and Gesture Recognition for Human-Computer Interaction}, journal = {ELCVIA}, volume = {5}, number = {3}, year = {2005},  url = {http://revc.cvc.uab.es/index.php/elcvia/article/view/109/107} }
+
+@ARTICLE{egm, 
+author={Triesch, J. and von der Malsburg, C.}, 
+journal={Pattern Analysis and Machine Intelligence, IEEE Transactions on}, title={A system for person-independent hand posture recognition against complex backgrounds}, 
+year={2001}, 
+month={dec}, 
+volume={23}, 
+number={12}, 
+pages={1449 -1453}, 
+keywords={Gabor wavelets;complex backgrounds;computer vision;elastic graph matching;gesture recognition;hand posture recognition;human computer interaction;object recognition;computer vision;gesture recognition;man-machine systems;object recognition;pattern matching;user interfaces;wavelet transforms;}, 
+doi={10.1109/34.977568}, 
+ISSN={0162-8828},}
+@ARTICLE{fingertip, 
+author={Oka, K. and Sato, Y. and Koike, H.}, 
+journal={Computer Graphics and Applications, IEEE}, title={Real-time fingertip tracking and gesture recognition}, 
+year={2002}, 
+month={nov/dec}, 
+volume={22}, 
+number={6}, 
+pages={ 64 - 71}, 
+keywords={ augmented desk interfaces; direct manipulation; dynamic lighting conditions; filtering technique; fingertip locations; hand tracking method; image frames; multiple fingertip motions; real-time fingertip tracking; real-time gesture recognition; symbolic gestures; virtual reality; augmented reality; gesture recognition; optical tracking;}, 
+doi={10.1109/MCG.2002.1046630}, 
+ISSN={0272-1716},}
+
+
+@ARTICLE{something, 
+author={Lades, M. and Vorbruggen, J.C. and Buhmann, J. and Lange, J. and von der Malsburg, C. and Wurtz, R.P. and Konen, W.}, 
+journal={Computers, IEEE Transactions on}, title={Distortion invariant object recognition in the dynamic link architecture}, 
+year={1993}, 
+month={mar}, 
+volume={42}, 
+number={3}, 
+pages={300 -311}, 
+keywords={artificial neural networks;cellular signals;dynamic link architecture;fine-scale temporal structure;geometrical distance vectors;gray-level camera images;human faces;local power spectrum;matching cost function;multiresolution description;object recognition system;sparse graphs;stochastic optimization;transputer network;video images;face recognition;self-organising feature maps;transputer systems;}, 
+doi={10.1109/12.210173}, 
+ISSN={0018-9340},}
+
+@inproceedings{3d,
+   author = "A. Imai and Nobutaka Shimada and Y. Shirai",
+   title = "3-D Hand Posture Recognition by Training Contour Variation",
+   booktitle = "Proc. of 6th Int. Conf. on Automatic Face and Gesture Recognition",
+   pages = "895 - 900",
+   year = "2004",
+}
+
+
+@INPROCEEDINGS{557260, 
+author={Triesch, J. and von der Malsburg, C.}, 
+booktitle={Automatic Face and Gesture Recognition, 1996., Proceedings of the Second International Conference on}, title={Robust classification of hand postures against complex backgrounds }, 
+year={1996}, 
+month={oct}, 
+volume={}, 
+number={}, 
+pages={170 -175}, 
+keywords={classification;complex backgrounds;elastic graph matching;grey-level images;hand postures;recognition of faces;image classification;image recognition;}, 
+doi={10.1109/AFGR.1996.557260}, 
+ISSN={},}
+
+@INPROCEEDINGS{dla, 
+author={Ying Wu and Huang, T.S.}, 
+booktitle={Computer Vision and Pattern Recognition, 2000. Proceedings. IEEE Conference on}, title={View-independent recognition of hand postures}, 
+year={2000}, 
+month={}, 
+volume={2}, 
+number={}, 
+pages={88 -94 vol.2}, 
+keywords={Discriminant-EM algorithm;appearance-based learning approach;experiments;gesture interface;hand detection;hand posture recognition;model-based approach;supervised learning;unlabeled training set;unsupervised learning;view-independent object recognition;computer vision;gesture recognition;learning (artificial intelligence);object recognition;}, 
+doi={10.1109/CVPR.2000.854749}, 
+ISSN={},}
+
+@INPROCEEDINGS{Freeman94orientationhistograms,
+    author = {William T. Freeman and William T. Freeman and Michal Roth and Michal Roth},
+    title = {Orientation Histograms for Hand Gesture Recognition},
+    booktitle = {In International Workshop on Automatic Face and Gesture Recognition},
+    year = {1994},
+    pages = {296--301}
+}
+
+@ARTICLE{1672195, 
+author={Fischler, M.A. and Elschlager, R.A.}, 
+journal={Computers, IEEE Transactions on}, title={The Representation and Matching of Pictorial Structures}, 
+year={1973}, 
+month={jan.}, 
+volume={C-22}, 
+number={1}, 
+pages={ 67 - 92}, 
+keywords={ Dynamic programming, heuristic optimization, picture description, picture matching, picture processing, representation.;}, 
+doi={10.1109/T-C.1973.223602}, 
+ISSN={0018-9340},}
+
+@ARTICLE{210173, 
+author={Lades, M. and Vorbruggen, J.C. and Buhmann, J. and Lange, J. and von der Malsburg, C. and Wurtz, R.P. and Konen, W.}, 
+journal={Computers, IEEE Transactions on}, title={Distortion invariant object recognition in the dynamic link architecture}, 
+year={1993}, 
+month={mar}, 
+volume={42}, 
+number={3}, 
+pages={300 -311}, 
+keywords={artificial neural networks;cellular signals;dynamic link architecture;fine-scale temporal structure;geometrical distance vectors;gray-level camera images;human faces;local power spectrum;matching cost function;multiresolution description;object recognition system;sparse graphs;stochastic optimization;transputer network;video images;face recognition;self-organising feature maps;transputer systems;}, 
+doi={10.1109/12.210173}, 
+ISSN={0018-9340},}

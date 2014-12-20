@@ -1,0 +1,132 @@
+/*
+This script will have the drone do ball tracking only if tracking is 1
+tracking gets 0 when the ball is put below y = -0.3
+tracking gets 1 when the ball is put above y = 0.3
+*/
+
+
+//var Global.drone = ARDrone.new;
+//drone.load = 1;
+//while(!drone.stateConnected)
+//{
+ //       echo("Waiting connection.");
+ //       sleep(1);
+//};
+
+//echo ("Successfuly connected");
+
+//var Global.ball = colormap.new("drone.cameraVal", 200, 255, 0, 120, 0, 255, 0.0015, true);
+tracking = 1;
+recording = 0;
+first = 0;
+second = 0;
+	
+myTag:every(0.1s)
+{
+	if (ball.visible)
+        {
+		if (tracking == 1)
+		{
+			drone.speedYaw = -(ball.x * 2); //track the ball
+			if (((ball.x * ball.y) > 0.09) || ((ball.x * ball.y) < -0.09))//ball is in corner
+			{		
+				echo("tracking set to 0");
+				tracking = 0;
+			}
+		}
+		else //tracking == 0
+		{
+
+			if(recording == 0)
+			{
+				if ((ball.x < 0.1) && (ball.x > -0.1) && (ball.y < 0.1) && (ball.y > -0.1)) //ball to midddle to start recording
+				{
+					echo("recording set to 1");
+					recording = 1;
+				}
+				else //ball not in middle
+				{
+					drone.speedYaw = 0;
+				}				
+			}
+			else //recording == 1
+			{
+				if ( (first != 0) && (second != 0))//memory full
+				{
+					echo("exiting loop");
+					break;
+				}
+				else //values still unrecorded
+				{
+					if (first == 0) //first not set
+					{
+						if ((ball.y > 0.2) && (ball.x < 0.2) && (ball.x > -0.2)) //top middle part = 1
+						{
+							echo("first set to 1");
+							first = 1;
+						}
+						else //not in top middle
+						{
+							if ((ball.y < -0.4) && (ball.x < 0.2) && (ball.x > -0.2))//bottom middle part = 2  <------- it really likes this, make them equal
+							{
+								echo("first set to 2");
+								first = 2;
+							}
+							else //neither in region 1 nor in region 2
+							{
+								drone.speedYaw = 0;
+							}
+						}
+					}
+					else //first filled up
+					{
+						if (second == 0)
+						{
+							if ((first != 1) && (ball.y > 0.2) && (ball.x < 0.2) && (ball.x > -0.2)) //top middle part = 1
+							{
+								echo("second set to 1");
+								second = 1;
+							}
+							else //not in top middle
+							{
+								if ((first != 2) &&(ball.y < -0.4) && (ball.x < 0.2) && (ball.x > -0.2))//bottom middle part = 2
+								{
+									echo("second set to 2");
+									second = 2;
+								}	
+								else //neither in region 1 nor in region 2
+								{
+									drone.speedYaw = 0;
+								}
+							}
+						}
+				//continue onto third
+					}
+				}
+				
+			}
+		}
+	}
+	else
+        {
+                drone.speedYaw = 0;
+        }
+	
+};
+if ((first == 1) && (second == 2))
+{
+	echo("first = 1, second = 2, setting speed -1");
+	drone.speedYaw = -1;
+	sleep(4s);
+	drone.speedYaw = 0;
+};
+if ((first == 2) && (second == 1))
+{
+	echo("first 2, second 1, setting speed = 1");
+	drone.speedYaw = 1;
+	sleep(4s);
+	drone.speedYaw = 0;
+};
+
+
+
