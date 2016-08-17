@@ -129,8 +129,8 @@
     \newcommand*\inskip{}
     \renewcommand\item[4]{%
 	\inskip%
-	{\raggedleft\sc ##1\\[1pt]}
-	{\Large\it ##2}\\
+	{\raggedleft\textsc ##1\\[1pt]}
+	{\Large\textit ##2}\\
 	{##3}\\[2pt]
 	{##4}\\[2pt]
 	\renewcommand\inskip{\bigskip}}}
@@ -144,9 +144,9 @@
 % ]|
 \newenvironment{yearlist}{%
     \renewcommand\item[4][]{%
-	{\sc ##2} & {\bfseries ##3} \\
-	\ifstrempty{##1}{}{& {\sc ##1} \\}
-	& {\it ##4}\medskip\\}
+	{\textsc ##2} & {\bfseries ##3} \\
+	\ifstrempty{##1}{}{& {\textsc ##1} \\}
+	& {\textit ##4}\medskip\\}
     \tabularx{\linewidth}{rX}}
     {\endtabularx}
 
