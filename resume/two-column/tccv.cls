@@ -129,12 +129,12 @@
     \newcommand*\inskip{}
     \renewcommand\item[4]{%
 	\inskip%
-	{\raggedleft\sc ##1\\[1pt]}
-	{\Large\it ##2}\\
+	{\raggedleft\sc ##1\\[2pt]}
+	{\large\it ##2}\\ [2pt] %previously \Large\it
 	{##3}\\[2pt]
-	{##4}\\[2pt]
+	{##4}\\%[2pt]
 	\renewcommand\inskip{\bigskip}}}
-    {\bigskip}
+%    {\bigskip}
 
 % Use only \item inside this environment: no other macros
 % are allowed:
