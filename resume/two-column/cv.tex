@@ -1,4 +1,15 @@
 \documentclass[oldfontcommands]{tccv}
+
+\makeatletter
+\DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
+\DeclareOldFontCommand{\sf}{\normalfont\sffamily}{\mathsf}
+\DeclareOldFontCommand{\tt}{\normalfont\ttfamily}{\mathtt}
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+\DeclareOldFontCommand{\it}{\normalfont\itshape}{\mathit}
+\DeclareOldFontCommand{\sl}{\normalfont\slshape}{\@nomath\sl}
+\DeclareOldFontCommand{\sc}{\normalfont\scshape}{\@nomath\sc}
+\makeatother
+
 \usepackage[english]{babel}
 
 \begin{document}
@@ -18,10 +29,10 @@
      {Google, Mountain View, CA}
      {AndroidThings, Google Home (Contractor for eTouch Systems)}
 
-- In charge of building and maintaining testplan for major project \\
+- In charge of developing and maintaining testplan for all Google assisstant speakers built on AndroidThings \\
 - Lead automation team to maximize automated test coverage \\
 - Third party interface testing for home automation \\
-Skills used: \textbf{Python, Go, Google internal tools}
+Skills used: \textbf{Python, Go, Google internal tools, Android, adb}
 
 \item{July 2016 -- August 2016}
      {Software Development Engineer in Test II}
@@ -30,14 +41,14 @@ Skills used: \textbf{Python, Go, Google internal tools}
 
 - Contributed to developing a complete overhaul of Xhome backend architecture \\
 - Managed iOS Automated testing \\
-Skills used: \textbf{Java, IntelliJ, JUnit, Python, locustio}
+Skills used: \textbf{Java, IntelliJ, Python, locustio}
 
 \item{October 2013 -- July 2016}
-     {Software Development Engineer in Test \\Jr. Software Engineer}
+     {Software Development Engineer in Test, \\Jr. Software Engineer}
      {Comcast Interactive Media, Philadelphia, PA}
      {Xfinity Home (Contractor for Harvey Nash)}
 
-- Developed a tool for monitoring the health of servers used by Xfinity Home applications. \\
+%- Developed a tool for monitoring the health of servers used by Xfinity Home applications. \\
 - Developed an http proxy tool which selectively rewrote packets to simulate test scenarios that are difficult to reproduce. \\
 - Developed an interactive terminal for accessing the backend API to make Xhome application development smoother. \\
 - Assessed risk of Xhome iOS releases. Managed Xhome iOS automated testing \\
@@ -74,10 +85,10 @@ Skills used: \textbf{git, Perl, regex, VIM, html, javascript}
 \begin{factlist}
 
 \item{Good level}
-     {Python, ruby, Android, C++, git, Bash, VIM, Charles}
+     {Python, ruby, Android, adb, C++, git, Bash, VIM, Charles, Perl}
 
 \item{Intermediate}
-     {Android Studio, go, \LaTeX, Ruby Metaprogramming, Wireshark}
+     {Android Studio, Go, \LaTeX, Ruby Metaprogramming, Wireshark}
 
 \item{Basic level}
      {Java, IntelliJ, C\#, PostgreSQL, Lisp, Swift}
@@ -100,16 +111,24 @@ Skills used: \textbf{git, Perl, regex, VIM, html, javascript}
 
 \begin{yearlist}
 
+\item{2018}
+     {\href{https://github.com/apophis981/chris_roberts_bot}{Discord Chris Roberts bot}}
+     {Created a bot for discord chat rooms that imitates the speech patterns of the popular game developer Chris Roberts}
+
+\item{2017}
+     {\href{https://github.com/apophis981/ghvz}{Google Humans vs Zombies}}
+     {Helped lead teams of people to organize logistics for GHVZ and create website and mobile apps for the game}
+
 \item{2016}
      {\href{https://twitter.com/neiltyson_bot}{Neil DeGrasse Tyson Twitter bot}}
      {Created an immitation bot which learns from Neil Tyson's tweets, generates its own, and posts them on its twitter}
 
-\item{2015}
-     {\href{https://github.com/apophis981/skype_bot}{Skype Chat bot}}
-     {Created an interactive custom machine-learning chat bot to impersonate a friend}
-
-\item{2014}
-     {\href{https://github.com/apophis981/game_dev/tree/master/select_an_object}{"Don't Die" Video Game}}
-     {Paired with a designer friend to complete a video game using Unity and C\#}
+%\item{2015}
+%     {\href{https://github.com/apophis981/skype_bot}{Skype Chat bot}}
+%     {Created an interactive custom machine-learning chat bot to impersonate a friend}
+%
+%\item{2014}
+%     {\href{https://github.com/apophis981/game_dev/tree/master/select_an_object}{"Don't Die" Video Game}}
+%     {Paired with a designer friend to complete a video game using Unity and C\#}
 \end{yearlist}
 \end{document}
